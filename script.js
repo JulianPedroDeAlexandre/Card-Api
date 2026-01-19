@@ -63,7 +63,6 @@ async function fetchRandomUser() {
     }
 }
 
-
 menuItems.forEach(item => {
     const type = item.dataset.info;
 
