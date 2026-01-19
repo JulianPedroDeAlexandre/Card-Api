@@ -1,0 +1,197 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Ubuntu, sans-serif;
+}
+
+:root {
+    --bg: #2C2E31;
+    --card-bg: #ffffff;
+    --header-bg: #f1f1f1;
+    --text-main: #2c2e31;
+    --text-secondary: #888;
+    --icon: #d9d9d9;
+}
+
+body {
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+.card {
+    background: var(--card-bg);
+    width: 55dvw;     /* Mantém tamanho original no PC */
+    height: 70dvh;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #0003;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.card-header {
+    background: var(--header-bg);
+    width: 100%;
+    height: 20dvh;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.people {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--icon);
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #0005;
+}
+
+.info {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.info h3 {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.info h1 {
+    color: var(--text-main);
+    font-size: 1.5rem;
+}
+
+.list-menu {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.list-menu li {
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.list-menu img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-out, filter 0.4s ease-out;
+}
+
+.list-menu li:hover img {
+    transform: translateY(-10px);
+    filter: brightness(0) invert(1);
+}
+
+#btn-new-user {
+    margin-top: 2rem;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    background: var(--bg);
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn-new-user:hover {
+    background: #1f2022;
+}
+
+
+@media (max-width: 992px) {
+    .card {
+        width: 75dvw;
+        height: 70dvh;
+    }
+
+    .people {
+        width: 140px;
+        height: 140px;
+        bottom: -50px;
+    }
+
+    .info h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90dvw;              
+        height: auto;              
+        padding-bottom: 3rem;
+    }
+
+    .card-header {
+        height: 22dvh;
+    }
+
+    .people {
+        width: 120px;
+        height: 120px;
+        bottom: -40px;
+    }
+
+    .info {
+        margin-top: 70px;
+    }
+
+    .info h1 {
+        font-size: 1.2rem;
+    }
+
+    .list-menu {
+        gap: 1rem;
+    }
+
+    .list-menu li {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 95dvw;
+        height: auto;
+    }
+
+    .card-header {
+        height: 18dvh;
+    }
+
+    .people {
+        width: 100px;
+        height: 100px;
+        bottom: -35px;
+    }
+
+    .info h1 {
+        font-size: 1.1rem;
+    }
+
+    #btn-new-user {
+        width: 80%;
+    }
+}
